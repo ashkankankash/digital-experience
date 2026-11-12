@@ -1,0 +1,1201 @@
+
+/* ========================================
+   1. DESIGN SYSTEM – CSS VARIABLES
+======================================== */
+
+:root {
+
+    /* Typography */
+    --font-primary: 'Inter', sans-serif;
+
+    --font-size-h1: clamp(2.5rem, 5vw, 3.5rem);
+    --font-size-h2: clamp(1.75rem, 3vw, 2.25rem);
+    --font-size-h3: 1.5rem;
+    --font-size-h4: 1.25rem;
+    --font-size-body: 1rem;
+    --font-size-small: 0.875rem;
+
+    /* Font Weights */
+    --font-regular: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+    --font-bold: 700;
+    --font-xbold: 900;
+
+    /* Colors */
+    --color-primary: #202B38;
+    --color-accent: #3978D4;
+    --color-secondary: #697586;
+
+    --color-background: #f3f4f6;
+    --color-light: #F4F6F8;
+    --color-border: #E2E8F0;
+
+    --color-white:#fff;
+
+
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    --spacing-2xl: 5rem;
+
+    /* Border Radius */
+    --radius-sm: 0.25rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 1rem;
+
+    /* Transitions */
+    --transition-default: 0.3s ease;
+
+}
+
+
+/* ========================================
+   2. GENERAL STYLES
+======================================== */
+
+body {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-body);
+    font-weight: var(--font-medium);
+
+    color: var(--color-primary);
+    background-color: var(--color-background);
+
+    line-height: 1.6;
+}
+
+
+/* ========================================
+   3. TYPOGRAPHY
+======================================== */
+
+p, a, h1, h2, h3, h4, h5, ul, li{margin:0; padding: 0;}
+
+h1 {
+    font-size: var(--font-size-h1);
+    font-weight: var(--font-bold);
+    line-height: 1.15;
+}
+
+h2 {
+    font-size: var(--font-size-h2);
+    font-weight: var(--font-bold);
+    line-height: 1.2;
+}
+
+h3 {
+    font-size: var(--font-size-h3);
+    font-weight: var(--font-semibold);
+}
+
+h4 {
+    font-size: var(--font-size-h4);
+    font-weight: var(--font-semibold);
+}
+
+p {
+    color: var(--color-secondary);
+    line-height: 1.3;
+}
+.hideMe{display: none !important;}
+.confContainer{max-width: 100%;}
+p.h_small{
+    font-size: 0.83rem;
+    margin-bottom: 0rem;
+    color:var(--color-accent);
+    font-weight: var(--font-medium);
+    line-height: 1.2;
+    max-width: 100%;
+}
+
+.confContainer{
+    padding: 1.5rem;
+}
+
+.navbar .container-fluid{
+    padding-right: 1.5em;
+    padding-left: 1.5em;
+}
+header, main, footer{
+    max-width: 1320px;
+    min-width:320px;
+    width:100%;
+    margin:0 auto;
+    background-color: var(--color-white);
+
+}
+
+/* ========================================
+   4. LINKS
+======================================== */
+
+a {
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: var(--transition-default);
+}
+
+a:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+
+a.btn:hover {
+    text-decoration: none;
+}
+/* ========================================
+   5. BUTTONS
+======================================== */
+
+.btn-custom {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+
+    color: var(--color-background);
+    background-color: var(--color-accent);
+
+    border-radius: var(--radius-md);
+    transition: var(--transition-default);
+}
+
+.btn-custom:hover {
+    background-color: var(--color-primary);
+    color: var(--color-background);
+}
+
+/*
+#############
+*/
+
+/* ==========================================
+   HEADER & NAVIGATION START
+========================================== */
+.container-fluid{position: relative;}
+.darkmode p{
+    display: inline-block;
+    padding-top: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-right: 0;
+    color: var(--color-primary);
+    font-size: 0.75rem;
+    line-height: 0;
+    margin-top: 0;
+}
+.drkContent{
+    position: absolute;
+    right: 102px;
+    top: 6px;
+}
+.darkmode.active .moon{display: inline-block;}
+.darkmode.active .sun{display: none;}
+.darkmode.active .bi-moon-fill{display: inline-block;}
+.darkmode.active .bi-sun-fill{display: none;}
+
+.darkmode .moon{display: none;}
+.darkmode .sun{display: inline-block;}
+.darkmode .bi-moon-fill{display: none;}
+.darkmode .bi-sun-fill{display: inline-block;}
+.darkmode .bi.bi-sun-fill:before{
+    color:#ffba00 ;
+}
+ul.drkContent{
+    list-style-type: none;
+}
+.nav-item.item5{
+    padding-right: 0;
+padding-left: 0.313rem;
+cursor:pointer
+}
+.nav-item.item5.active{ border: 1px solid #fff}
+.nav-item.item5.darkmode{ border: 1px solid var(--color-secondary)}
+.darkmode .bi:before{
+    margin-right: 0.313rem;
+}
+.navbar-brand{
+    font-size: 2em;
+    line-height: 1;
+}
+
+.punktLogo{
+    font-size: var(--spacing-xl);
+    line-height: 0;
+    color: var( --color-accent);
+}
+
+
+.navbar-nav li{}
+.navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
+    color: var(--color-accent);
+    display: inline-block;
+    font-weight: 600;
+    position: relative;
+}
+
+
+.nav-link{
+    color: var(--color-primary);
+}
+
+.nav-item.item3 {
+        border-bottom: 0;
+    }
+    .nav-item.item4{
+        margin-top:1.25rem;
+    }
+
+    .nav-item.item4 {
+        margin-top: 0.2rem;
+    }
+/* ==========================================
+   HEADER & NAVIGATION End
+========================================== */
+
+
+/* ==========================================
+   5. HERO SECTION
+========================================== */
+.heroSection{
+    background-image: url("../assets/images/header.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.hero {
+    padding-top: 2.5em;
+    padding-bottom: 2.5em;
+    height: 100%;
+    width:100%;
+    max-width:100%;
+}
+
+.hero h1{
+    font-size: 2.5em;
+    line-height: 1.2;
+    position: relative;
+    font-weight: var(--font-xbold);
+    margin-bottom: 1.563rem;
+    margin-top:-1.563rem;
+
+}
+.hero .partOne{
+    font-size: 0.4em;
+    font-weight: var(--font-regular);
+    text-transform: uppercase;
+    margin-bottom: 0.938rem;
+}
+.hero p{
+    font-size: 1.3em;
+    color:var(--color-primary);
+    margin-bottom: 1em
+}
+
+.hero .btn-light,
+.btn-light {
+    border: 1px solid var(--color-primary);
+    background-color: var(--color-white);
+}
+.hero .btn{
+    padding: 0.475em 1.25em ;
+}
+/* ==========================================
+   5. HERO SECTION finisch
+========================================== */
+
+
+
+
+
+/* ==========================================
+   about SECTION
+========================================== */
+
+.aboutContent span{
+    font-size: 0.8rem;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+.aboutContent h2{
+    font-size: 1.85rem;
+    line-height: 1;
+    margin-bottom: 0.75rem;
+}
+.aboutContent p{
+    font-size: 1rem;
+    line-height: 1.45;
+    margin-bottom: 1.5rem;
+}
+.aboutHighLight h3{
+    font-size: 0.9rem;
+    line-height: 1.4;
+    font-weight: var(--font-bold);
+}
+.aboutHighLight .bi::before {
+    font-size: 2rem;
+    color: var(--color-accent);
+    display: block;
+    margin-bottom: 0.85rem;
+}
+.aboutHighLight p{
+    font-size: 0.89rem;
+    line-height: 1.45;
+    margin-bottom: 1.6rem;
+}
+.about-buttons{
+
+}
+.about .mRight{margin-bottom: 1.5rem;}
+
+.about p.h_small{ margin-bottom: 0.35rem;}
+/* ==========================================
+   about SECTION
+========================================== */
+
+
+
+/*_______________________
+    Service section
+_________________________*/
+.serviceSection{
+    background-color: #f3f4f6;
+}
+.services{
+    background-color: transparent;
+    color: #172536;
+}
+.services h4{
+    color: #172536;
+}
+.services p{
+    color: #667384;
+}
+.serviceDetails article{
+    background-color: var(--color-white);
+    padding: 1rem;
+    border-radius:0.7rem;
+    border: 1px solid #ccc;
+    margin-bottom: 1rem;
+}
+.serviceIntro p{
+    font-size: 0.85rem;
+    max-width: 100%;
+    margin-bottom: 1.8rem;
+}
+.serviceIntro p.h_small{
+    color:var(--color-accent);
+    font-weight: var(--font-medium);
+    line-height: 1.2;
+    font-size: 0.83rem;
+    max-width: 100%;
+}
+.serviceIntro h4{
+    font-size: 1.8rem;
+    line-height: 1.2;
+}
+.serviceDetails .bi::before{
+    display: inline-block;
+    color: var(--color-accent);
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    background-color: #eef2ff;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.serviceDetails .serviceTitle{
+    font-size: 1rem;
+    font-weight: var(--font-bold);
+    margin-bottom: 0.6rem;
+    color: #172536;
+}
+.serviceDetails .titel{
+    font-size: 0.9rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+.serviceDetails .link{
+    font-size: 0.9rem;
+    color: var(--color-accent);
+    line-height: 1.2;
+}
+
+.serviceDetails .link::after {
+    display: inline-block;
+    font-family: bootstrap-icons !important;
+    font-style: normal;
+    font-weight: 700 ;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    vertical-align: middle;
+    -webkit-font-smoothing: antialiased;
+    content: "\f11e";
+    rotate: 225deg;
+    margin-left: 0.5rem;
+}
+.getIntouch{
+    margin-top: 0.2rem;
+}
+.getIntouch{
+    background-color: var(--color-white);
+        padding: 1rem 0.2rem;
+    border-radius:0.7rem;
+    border: 1px solid #ccc;
+    margin-bottom: 1rem;
+    margin-left:0;
+    margin-right: 0;
+}
+.getIntouch p{
+
+    font-size:0.9rem;
+}
+.getIntouch p.titel2{
+    font-weight: var(--font-bold);
+    color: #172536;
+}
+.bcta {
+    margin-top: 1rem;
+}
+
+/*_______________________
+    Service section
+_________________________*/
+
+/*_______________________
+    project section
+_________________________*/
+
+.project h5{
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    font-weight: var(--font-bold);
+    margin-bottom: 0.8rem;
+    text-align: center;
+}
+.projectSection{
+    background-color: #c1daff;
+}
+.carousel{
+    border: 1px solid var(--color-secondary);
+    background-color: var(--color-white);
+    padding: 1.2rem;
+    border-radius: 0.4rem;
+}
+.carousel-inner{
+    border: 1px solid var(--color-secondary);
+    border-radius: 0.4rem;
+}
+.projectDetails{
+    margin-left:0;
+    margin-right: 0;
+}
+.project img{
+    margin: 0rem auto 0rem;
+    max-width: 100%;
+    width: 100%;
+}
+.carousel-item{
+
+}
+.carousel-caption{
+    position: relative;
+        right: auto;
+        bottom: auto;
+        left: auto;
+}
+.carousel-indicators [data-bs-target]{
+ background-color:  var(--color-secondary);
+}
+.carousel-indicators .active{
+background-color:  var(--color-accent);
+}
+.carousel{
+
+    width: 100%;
+    margin: 0 auto;
+}
+.project .titel{
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: var(--font-bold);
+    margin-bottom: 0.8rem;
+}
+.project p{
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+}
+.project p.titelList{
+   margin-bottom: 0.3rem;
+}
+.project p.h_small{
+    margin-bottom: 0rem;
+        color: var(--color-accent);
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon{
+    background-color: var(--color-secondary);
+    border-radius: 3rem;
+    padding: 1.3rem;
+    background-size: 87% 68%;
+    width: 1rem;
+        height: 1rem;
+}
+.carousel-indicators [data-bs-target]{
+    width: 20px;
+        height: 20px;
+        border-radius: 50%;
+}
+.project .btn{
+    margin-bottom: 3rem;
+}
+.carousel-caption{
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+}
+.project ul li{
+    font-size: var(--font-size-body);
+    color: var(--color-primary);
+    padding-left: 0;
+}
+.project ul{
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    margin-bottom: 1.5rem;
+}
+.project ul li .bi-check::before{
+    font-size: 1.5rem;
+    rotate: -5deg;
+    color: var(--color-primary);
+}
+/*_______________________
+    project section
+_________________________*/
+
+/*========================
+    Contact section
+==========================*/
+.contactSection{
+
+}
+.contact h6{
+    font-size: 1.8rem;
+    font-weight: var(--font-bold);
+    max-width: 100%;
+    width: 100%;
+    line-height: 1.2;
+    margin-bottom: 0.8rem;
+}
+.contact .intro{
+    margin-bottom: 2.2rem;
+}
+.contact .details .h_small{
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+.details .info{
+    position: relative;
+    padding-left:3.5rem;
+    margin-bottom: 0.8rem;
+}
+.details .info .bi{
+    position: absolute;
+    left:0;
+    top:0;
+    font-size: 1.5rem;
+    color:var(--color-accent);
+    background-color: #eef2ff;
+    display: inline-block;
+    padding: 0 0.5rem;
+    border-radius: 0.4rem;
+}
+.details .info p{
+    line-height: 1.2;
+    font-size: 0.879rem;
+
+}
+.details .info p:nth-child(2){
+    font-weight: var(--font-bold);
+    color: var(--color-primary);
+}
+.cm2 form{
+    border:solid 1px #ccc;
+    padding: 1.2rem 1.2rem 3rem 1.2rem;
+    border-radius: .4rem;
+}
+form label.form-label{
+    font-size: 0.876rem ;
+    margin-bottom: 0;
+    font-weight: var(--font-bold);
+    color: var(--color-primary);
+}
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #a6a5a5 !important;
+   font-size: 0.876rem ;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #a6a5a5 !important;
+   font-size: 0.876rem ;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color:#a6a5a5  !important;
+   font-size: 0.876rem ;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #a6a5a5 !important;
+   font-size: 0.876rem ;
+}
+form .infoM label{
+    font-size: 0.876rem ;
+    color: var(--color-secondary);
+    font-weight: 400;
+}
+form .form-field{
+    margin-bottom: 0.8rem;
+}
+.formTitel p{
+    font-size: 1.3rem;
+    font-weight: var(--font-bold);
+    color: var(--color-primary);
+    margin-bottom: 1.3rem;
+}
+form .message{
+    margin-bottom: 2rem;
+}
+form button .bi-arrow-right::before{
+    vertical-align: middle;
+    margin-left: 0.5rem;
+}
+.success .titel{
+    color:#02a902;
+    font-size: 2rem;
+    line-height: 1.1;
+    font-weight: var(--font-bold);
+    margin-bottom: 1rem;
+}
+.contact .details{
+    margin-bottom: 2.3rem;
+}
+.form .form-field.has-error label,
+.has-error{
+    color:#e10000 !important;
+}
+small.validInfoText{
+    font-size: 0.65rem;
+    text-align: right;
+    color: var(--color-secondary);
+        display: block;
+        margin-top: 0.3rem;
+}
+.formValidMail{
+    font-size: 0.65rem;
+}
+/*========================
+    Contact section
+==========================*/
+
+/*========================
+    footer section
+==========================*/
+.footerDetails .brand{
+    color: #CBD5E1;
+    font-size: 1.175rem;
+
+}
+.footerDetails p{
+    margin-bottom: 0.5rem;
+}
+.footerDetails .brand .punktLogo{
+    font-size: 2rem;
+}
+.footer.confContainer{
+     background-color: #202b38;
+     padding-top: 1.8rem;
+}
+.footerDetails p a{
+    color: #E2E8F0;
+    font-size: 0.875rem;
+}
+.footerDetails p a:hover{
+    color: var(--color-white);
+    text-decoration: underline;
+}
+.footerDetails .infoText{
+    color: #AAB6C5;
+    font-size: 0.75rem;
+}
+/*========================
+    footer section
+==========================*/
+
+/*========================
+    DAAAAARK MODE
+==========================*/
+
+
+   body.darkMode .bi-moon-fill::before { font-size: 0.8rem;}
+	body.darkMode {
+		background-color: #252223;
+		color: #fff;
+	}
+	body.darkMode header,body.darkMode main,body.darkMode footer,body.darkMode .navbar,
+	body.darkMode .serviceDetails article,body.darkMode .getIntouch,
+	body.darkMode .project {
+	    background-color: #252223 !important;
+
+	}
+	body.darkMode .project {
+	    background-color: #393963 !important;
+
+	}
+	body.darkMode .navbar a,
+	body.darkMode .project h5{
+	    color: #fff;
+	}
+	body.darkMode .serviceSection,
+	body.darkMode .carousel-item,
+	body.darkMode .carousel-caption, body.darkMode .carousel-inner{
+	    background-color: #000 !important;
+	}
+	body.darkMode .serviceSection p,
+	body.darkMode .serviceSection h4,
+	body.darkMode .aboutContent p, body.darkMode .form .formTitel p,
+	body.darkMode form label.form-label,
+	body.darkMode .navbar-toggler,body.darkMode	.navbar-toggler-icon,
+	body.darkMode .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before,
+	body.darkMode p{
+	    color: #fff !important;
+	}
+	body.darkMode .navbar-toggler[aria-expanded="false"] .navbar-toggler-icon{
+	background-image: url("../assets/images/navbar.svg") !important;
+	}
+	body.darkMode .navbar svg{
+	fill:#fff !important;
+	}
+	body.darkMode .navbar-toggler{border-color: var(--color-white)}
+	body.darkMode .serviceIntro p.h_small,
+	body.darkMode .navbar-nav .nav-link.active, .navbar-nav .nav-link.show,
+	body.darkMode .punktLogo, .serviceDetails .link,
+	body.darkMode .aboutHighLight .bi::before{
+	    color: #47bcff !important;
+	}
+	body.darkMode .navbar-nav .nav-link.active:after{
+	    background-color: #47bcff !important;
+	}
+
+	body.darkMode .hero h1, body.darkMode .hero p{color: var(--color-primary) !important;}
+/*========================
+    DAAAAARK MODE
+==========================*/
+@media (min-width: 1290px){
+    /*_______________________
+        project section
+    _________________________*/
+
+    .project h5{
+        font-size: 1.5rem;
+        color: var(--color-primary);
+        font-weight: var(--font-bold);
+        margin-bottom: 0.8rem;
+    }
+    .projectSection{
+        background-color: #c1daff;
+    }
+    .carousel{
+        border: 1px solid var(--color-secondary);
+        background-color: var(--color-white);
+        padding: 1.2rem;
+        border-radius: 0.4rem;
+    }
+    .carousel-inner{
+        border: 1px solid var(--color-secondary);
+        border-radius: 0.4rem;
+    }
+    .projectDetails{
+        margin-left:0;
+        margin-right: 0;
+    }
+    .project img{
+        width: 50%;
+        float: left;
+    }
+    .carousel-caption{
+        float: right;
+        width: 50%;
+        padding: 1.5rem 4.5rem 1.5rem 1.5rem;
+        text-align: left;
+    }
+    .project .btn{
+
+    }
+    .carousel {
+        max-width: 100%;
+        width: 100%;
+    }
+    .carousel-indicators{margin-left: 66%;}
+
+    .project .btn{
+        margin-bottom: 0;
+    }
+    .project .titel{
+       text-align: left;
+    }
+    .carousel-control-prev,
+    .carousel-control-next {
+        right: -2%;
+    }
+    /*_______________________
+        project section
+    _________________________*/
+}
+@media (min-width: 992px){
+
+    .confContainer{
+        padding-top: 3.5rem;
+        padding-bottom: 3.5rem;
+        padding-right: var(--spacing-2xl);
+        padding-left: var(--spacing-2xl);
+    }
+
+
+    .mLeft{
+        padding-right: 1.25rem;
+    }
+    .mRight{
+        padding-left: 1.25rem;
+    }
+    /* ==========================================
+       HEADER & NAVIGATION START
+    ========================================== */
+
+    .darkmode p{
+        display: inline-block;
+        padding-top: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+        margin-right: 0;
+        color: var(--color-primary);
+        font-size: 0.75rem;
+        line-height: 0;
+        margin-top: 0;
+    }
+    .drkContent{
+        right:0px;
+        top:8px;
+        z-index: 1;
+    }
+    .darkmode .bi.bi-sun-fill:before{
+        color:#ffba00 ;
+    }
+    .darkmode .bi:before {
+        margin-right: 0.313rem;;
+    }
+    .nav-item.item5{
+        padding-right: 0;
+        padding-left: 0.313rem;
+    }
+
+
+
+
+
+    .navbar .container-fluid{}
+    .navbar-expand-lg .navbar-nav .nav-link,
+    .nav-item.item4{
+        padding-right: var(--spacing-md);
+        padding-left: var(--spacing-md);
+    }
+
+    .navbar .container-fluid{
+        padding-right: var(--spacing-2xl);
+        padding-left: var(--spacing-2xl);
+    }
+    .navbar-nav li .active{
+        padding-bottom: 0.2rem;
+        margin-bottom: 0.3rem;
+    }
+
+
+    /* ==========================================
+       HEADER & NAVIGATION End
+    ========================================== */
+
+    /* ==========================================
+       5. HERO SECTION
+    ========================================== */
+
+
+
+    /* ==========================================
+       5. HERO SECTION
+    ========================================== */
+
+    /* ==========================================
+       about SECTION
+    ========================================== */
+
+    .aboutContent span{
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .aboutContent h2{
+        font-size: 2.5rem;
+        margin-bottom: 0.75rem;
+    }
+    .aboutContent p{
+        font-size: 0.9rem;
+        max-width: 580px;
+        width:100%;
+         margin-bottom: 1.5rem;
+    }
+
+    .aboutHighLight h3{
+        font-size: 1.2rem;
+        font-weight: var(--font-bold);
+    }
+    .aboutHighLight .bi::before {
+        font-size: 3rem;
+        color: var(--color-accent);
+        margin-bottom: 0.85rem;
+    }
+    .aboutHighLight p{
+        font-size: 0.9rem;
+        margin-bottom: 1.65rem;
+    }
+
+
+
+
+
+    /* ==========================================
+       about SECTION
+    ========================================== */
+
+
+    /*_______________________
+        Service section
+    _________________________*/
+
+    .services{
+
+
+    }
+    .services h4{
+
+    }
+    .services p{
+
+    }
+    .serviceDetails article{
+        margin-bottom: 0;
+    }
+    .serviceIntro p{
+        font-size: 0.85rem;
+        max-width: 480px;
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+    .serviceIntro p.h_small{
+        font-size: 0.83rem;
+        margin-bottom: 0rem;
+    }
+    .serviceIntro h4{
+        font-size: 2.48rem;
+
+    }
+    .serviceDetails .serviceTitle{
+        font-size: 1.2rem;
+        margin-bottom: 0.8rem;
+    }
+    .getIntouch{margin-top: 1.3rem;}
+
+    .bcta{
+        align-items: center;
+        min-height: 50px;
+        height: 100%;
+        margin-top: 0;
+    }
+    /*_______________________
+        Service section
+    _________________________*/
+
+
+    /*========================
+        Contact section
+    ==========================*/
+
+    .contact h6{
+        font-size: 2.5rem;
+        font-weight: var(--font-bold);
+        max-width: 24rem;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    .contact .intro{
+        margin-bottom: 2.6rem;
+    }
+    .details .info{
+        margin-bottom: 0.8rem;
+    }
+    form .message{
+        margin-bottom: 3rem;
+    }
+    .cm2 form{
+        padding-bottom: 7rem;
+    }
+    /*========================
+        Contact section
+    ==========================*/
+
+
+    /*========================
+        footer section
+    ==========================*/
+    .footerDetails .brand{
+        color: #CBD5E1;
+        font-size: 1.375rem;
+
+    }
+    .footerDetails p{
+        margin-bottom: 0.5rem;
+    }
+    .footerDetails .brand .punktLogo{
+        font-size: 2rem;
+    }
+    .footer.confContainer{
+         background-color: #202b38;
+         padding-top: 1.8rem;
+    }
+    .footerDetails p a{
+        color: #E2E8F0;
+    }
+    .footerDetails p a:hover{
+        color: var(--color-white);
+        text-decoration: underline;
+    }
+    /*========================
+        footer section
+    00000000000000000000000 */
+}
+@media (max-width: 991.98px){
+
+    /* ==========================================
+       HEADER & NAVIGATION
+    ========================================== */
+    .navbar-nav .nav-link.active:after{
+     display: none;
+    }
+
+    .navbar-nav .nav-link{
+        padding-left: 0.938rem ;
+        padding-right: 0.938rem ;
+    }
+    .nav-item.item3{
+        padding-bottom:0;
+        margin-bottom: 0.85rem;
+    }
+    .nav-item.item3 {
+        border-bottom: 1px solid var(--color-secondary);
+    }
+
+    .nav-item.item4{
+        margin-top:0.125rem;
+    }
+
+    .navbar .show{
+        padding-bottom:1.25rem;
+    }
+    .navbar-toggler.collapsed .navbar-toggler-icon{
+        background-image: var(--bs-navbar-toggler-icon-bg);
+    }
+
+    .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+          background-image: none;
+          position: relative;
+      }
+
+    .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before{
+        content:"X";
+        font-size: var(--font-size-h2);
+        color:var(--color-primary);
+    }
+
+
+    .navbar-toggler:focus {
+        text-decoration: none;
+        box-shadow: none;
+    }
+    .navbar-brand {
+        font-size: 1.6em;
+        line-height: 1;
+    }
+    /* ==========================================
+       HEADER & NAVIGATION
+    ========================================== */
+
+    /* ==========================================
+       5. HERO SECTION
+    ========================================== */
+
+
+    .hero h1{
+        font-size: 2.3rem;
+        line-height: 1.2;
+    }
+    .hero .partOne{
+        font-size: 0.45em;
+    }
+    .hero p {
+        font-size: 1.3em;
+        line-height: 1.2;
+    }
+    /* ==========================================
+       5. HERO SECTION
+    ========================================== */
+
+    /*_______________________
+        project section
+    _________________________*/
+
+.carousel-control-next,.carousel-control-prev{
+    display: none;
+}
+    /*_______________________
+        project section
+    _________________________*/
+
+}
+
+
+@media (max-width: 576px) {
+    /* ==========================================
+       5. HERO SECTION
+    ========================================== */
+    .hero h1 {
+
+        margin-bottom:0.938rem;
+    }
+
+
+
+    /* ==========================================
+       5. HERO SECTION
+    ========================================== */
+}
+@media (max-width: 414px) {
+    /* ==========================================
+       5. HERO SECTION
+    ========================================== */
+
+
+    /* ==========================================
+       5. HERO SECTION
+    ========================================== */
+}
