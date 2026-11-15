@@ -175,49 +175,55 @@ a.btn:hover {
    HEADER & NAVIGATION START
 ========================================== */
 
-/* Chrome / Metallic Sheen – nur 1× */
 .fx-chrome {
   font-size: 2em;
   line-height: 1.2;
   font-weight: 700;
 
-  background: linear-gradient(
+  /* Normaler Zustand – komplett dunkel, kein Glanz sichtbar */
+  background-image: linear-gradient(
     125deg,
-        #202B38 0%,
-        #202B38 40%,
-        #ffffff 43%,
-        #3978D4 50%,
-        #ffffff 52%,
-        #202B38 60%,
-        #202B38 100%
+    rgb(32, 43, 56) 0%,
+    rgb(32, 43, 56) 100%
   );
-  background-size: 200% 100%;          /* kleiner = sauberer Durchlauf */
-  background-position: 100% 0;         /* Startposition */
+  background-size: 200% 100%;
+  background-position: 100% 0;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   -webkit-text-fill-color: transparent;
 
-  animation: chrome-shine 2s ease-out 1 forwards;
-}
-
-.fx-chrome .punktLogo {
-  font-size: var(--spacing-xl);
-  line-height: 0;
-  color: var(--color-accent) !important;
-  -webkit-text-fill-color: var(--color-accent) !important; /* wichtig! */
+  animation: chrome-shine 2s ease-out 1.5s 1 forwards;
 }
 
 @keyframes chrome-shine {
   0% {
+    background-image: linear-gradient(
+      125deg,
+      rgb(32, 43, 56) 0%,
+      rgb(32, 43, 56) 40%,
+      rgb(255, 255, 255) 45%,
+      rgb(57, 120, 212) 50%,
+      rgb(255, 255, 255) 55%,
+      rgb(32, 43, 56) 60%,
+      rgb(32, 43, 56) 100%
+    );
     background-position: 100% 0;
   }
   100% {
+    background-image: linear-gradient(
+      125deg,
+      rgb(32, 43, 56) 0%,
+      rgb(32, 43, 56) 40%,
+      rgb(255, 255, 255) 45%,
+      rgb(57, 120, 212) 50%,
+      rgb(255, 255, 255) 55%,
+      rgb(32, 43, 56) 60%,
+      rgb(32, 43, 56) 100%
+    );
     background-position: -45% 0;
   }
 }
-
-/* Accessibility */
 @media (prefers-reduced-motion: reduce) {
   .fx-chrome {
     animation: none;
